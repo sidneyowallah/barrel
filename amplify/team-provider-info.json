@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-barrel-dev-150710-authRole",
+      "UnauthRoleArn": "arn:aws:iam::569758639273:role/amplify-barrel-dev-150710-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::569758639273:role/amplify-barrel-dev-150710-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-barrel-dev-150710-deployment",
+      "UnauthRoleName": "amplify-barrel-dev-150710-unauthRole",
+      "StackName": "amplify-barrel-dev-150710",
+      "StackId": "arn:aws:cloudformation:us-east-1:569758639273:stack/amplify-barrel-dev-150710/7eaeeb90-a46f-11eb-835b-123cdfa4b01d",
+      "AmplifyAppId": "d2kc3caxizmhqa"
+    },
+    "categories": {
+      "auth": {
+        "barrel995b7dae": {}
+      }
+    }
+  }
+}

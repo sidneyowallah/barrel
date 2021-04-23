@@ -1,0 +1,161 @@
+<form
+  class="form-wrapper"
+  [formGroup]="profileForm"
+  (ngSubmit)="submitProfileForm()"
+  novalidate
+>
+  <div>
+    <!-- Username -->
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required />
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input matInput formControlName="email" required />
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('email', 'required')">
+        Please provide an <strong>Email Address</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- First Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required />
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('firstName', 'required')">
+        Please provide a <strong>First Name</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- last Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required />
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('lastName', 'required')">
+        Please provide a <strong>Last Name</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- Phone Number -->
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phone" required />
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('phone', 'required')">
+        Please provide a <strong>Phone Number</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Date picker -->
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input
+        matInput
+        matInput
+        [min]="minDate"
+        [max]="maxDate"
+        readonly
+        [matDatepicker]="picker"
+        placeholder="Date of birth"
+        formControlName="dob"
+        (dateChange)="date($event)"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker
+        #picker
+        startView="year"
+        [startAt]="startDate"
+      ></mat-datepicker>
+
+      <mat-error *ngIf="errorHandling('dob', 'required')">
+        Please provide a <strong>Date of Birth</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- Address -->
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" required />
+      <!-- error -->
+      <mat-error *ngIf="errorHandling('address', 'required')">
+        Please provide an <strong>Address</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Select State</mat-label>
+      <mat-select [(value)]="selected" formControlName="state">
+        <mat-option [value]="stateArray" *ngFor="let stateArray of StateArray"
+          >{{ stateArray }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="errorHandling('state', 'required')">
+        Please provide a <strong>Date of Birth</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Add favorites -->
+  <mat-form-field class="favorites" appearance="outline">
+    <mat-label>Add Favorite Beverages</mat-label>
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let favoritesArray of FavoritesArray"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(favoritesArray)"
+      >
+        {{ favoritesArray.name }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+  </mat-form-field>
+
+  <mat-form-field class="file-upload" appearance="outline">
+    <mat-label>Add Profile Image</mat-label>
+    <div>
+      <mat-toolbar>
+        <!-- Display files names -->
+        <input
+          matInput
+          [(ngModel)]="fileAttr"
+          formControlName="profileImg"
+          readonly
+          name="name"
+        />
+
+        <!-- Select Button -->
+        <!-- <button mat-raised-button color="primary">Select File</button> -->
+      </mat-toolbar>
+
+      <!-- Fetch selected filed on change -->
+      <input
+        type="file"
+        #fileInput
+        id="uploadFile"
+        (change)="uploadFileEvt($event)"
+        name="uploadFile"
+        accept=".jpg,.svg,.png,.jpeg"
+      />
+    </div>
+  </mat-form-field>
+  <!-- Submit -->
+  <div class="submit-button-wrapper">
+    <button mat-raised-button color="primary">Submit</button>
+  </div>
+</form>

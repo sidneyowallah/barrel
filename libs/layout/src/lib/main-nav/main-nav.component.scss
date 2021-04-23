@@ -1,0 +1,74 @@
+.mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+  background-color: transparent;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+.menu {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 18px 40px rgba(0, 0, 0, 0);
+}
+.main-nav {
+  height: 105px;
+  color: #fff;
+}
+
+.menu-links a {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  margin: 0px 20px 0px 20px;
+}
+
+.logo {
+  background: url('/assets/images/53-Barrel@4x.png') no-repeat center center;
+  background-size: contain;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -60px);
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+}
+
+.menu-inverse {
+  transition: transform 330ms ease-in-out;
+  background-color: #fff;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  a {
+    color: #000;
+  }
+}
+.logo-inverse {
+  background: url('/assets/images/53-Barrel@4x-color.png') no-repeat center
+    center;
+  background-size: contain;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+// .mat-icon {
+//   color: #fff;
+// }
+.icon-inverse {
+  color: #000 !important;
+}

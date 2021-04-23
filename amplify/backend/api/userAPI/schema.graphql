@@ -1,0 +1,16 @@
+type User @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  username: String!
+  firstName: String
+  lastName: String
+  email: String
+  phone: String
+  dob: String
+  address: String
+  state: String
+  profileImg: String
+  favorites: [String]
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime
+  role: String!
+}

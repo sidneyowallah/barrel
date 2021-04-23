@@ -1,0 +1,33 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mat-form-field {
+  margin-left: 8px;
+  width: 250px;
+}
+
+.submit-button-wrapper {
+  margin-top: 20px;
+}
+
+.favorites {
+  width: 508px;
+}
+
+.file-upload {
+  width: 508px;
+}
+
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}

@@ -1,0 +1,15 @@
+<img src="{{ imagePath }}" />
+<h1 class="title" mat-dialog-title>
+  {{ title }}
+</h1>
+<hr />
+<div class="message" mat-dialog-content>
+  <p>{{ message }}</p>
+</div>
+
+<div mat-dialog-actions>
+  <button class="btn btn-highlight" mat-button (click)="onConfirm()">
+    Yes
+  </button>
+  <button class="btn" mat-button (click)="onDismiss()">No</button>
+</div>

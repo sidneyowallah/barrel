@@ -1,0 +1,67 @@
+<mat-toolbar (scroll)="onWindowScroll($event)" class="menu">
+  <mat-toolbar-row class="main-nav">
+    <!-- <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button> -->
+
+    <div fxFlex>
+      <div class="menu-links">
+        <a mat-button [routerLink]="'/spirits'"> Spirits </a>
+        <a mat-button [routerLink]="'/beer'"> Beer </a>
+        <a mat-button [routerLink]="'/wine'"> Wine </a>
+        <a mat-button [routerLink]="'/Extras'"> Extras </a>
+      </div>
+    </div>
+    <div fxFlex fxLayoutAlign="center center">
+      <!-- <div class="logo"><a mat-button (click)="goToHome()"></a></div> -->
+      <button (click)="goToHome()"><div class="logo"></div></button>
+    </div>
+
+    <div fxFlex fxLayoutAlign="flex-end center" class="menu-icons">
+      <button
+        mat-icon-button
+        class="menu-icon search-icon"
+        aria-label="icon-button with search icon"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+      <a [routerLink]="['/profile']"
+        ><button
+          mat-icon-button
+          class="menu-icon account-icon"
+          aria-label="icon-button with account icon"
+        >
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </a>
+      <button
+        *ngIf="signedIn; else loginIcon"
+        mat-icon-button
+        class="menu-icon loginout-icon"
+        aria-label="icon-button with loginout icon"
+        (click)="logout()"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
+      <ng-template #loginIcon>
+        <a [routerLink]="['/auth/login']"
+          ><button
+            mat-icon-button
+            class="menu-icon login-icon"
+            aria-label="icon-button with login icon"
+          >
+            <mat-icon>login</mat-icon>
+          </button>
+        </a>
+      </ng-template>
+
+      <button
+        mat-icon-button
+        class="menu-icon shopping-icon"
+        aria-label="icon-button with shopping cart icon"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
