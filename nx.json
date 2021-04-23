@@ -1,36 +1,26 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "barrel",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "delivery": {
-      "tags": []
-    },
-    "delivery-e2e": {
-      "tags": [],
-      "implicitDependencies": ["delivery"]
-    },
-    "api": {
-      "tags": []
-    },
-    "api-interfaces": {
-      "tags": []
-    }
+    "delivery": { "tags": [] },
+    "delivery-e2e": { "tags": [], "implicitDependencies": ["delivery"] },
+    "api": { "tags": [] },
+    "api-interfaces": { "tags": [] },
+    "appsync": { "tags": ["shared"] },
+    "auth": { "tags": [] },
+    "material": { "tags": [] },
+    "layout": { "tags": [] },
+    "profile": { "tags": [] },
+    "ui": { "tags": ["ui"] }
   }
 }

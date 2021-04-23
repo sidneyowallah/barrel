@@ -15,7 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@barrel/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@barrel/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@barrel/appsync": ["libs/appsync/src/index.ts"],
+      "@barrel/delivery-ui": ["libs/delivery-ui/src/index.ts"],
+      "@barrel/auth": ["libs/auth/src/index.ts"],
+      "@barrel/material": ["libs/material/src/index.ts"],
+      "@barrel/layout": ["libs/layout/src/index.ts"],
+      "@barrel/profile": ["libs/profile/src/index.ts"],
+      "@barrel/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

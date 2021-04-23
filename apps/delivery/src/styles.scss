@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Styles for toastr
+@import 'ngx-toastr/toastr';
+
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Montserrat&family=Oswald&family=Song+Myung&family=Work+Sans:wght@500&display=swap');
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+// font-family: 'Castoro', serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Song Myung', serif;
+// font-family: 'Work Sans', sans-serif;
